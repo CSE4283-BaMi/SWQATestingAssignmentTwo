@@ -1,4 +1,5 @@
 import unittest
+import xmlrunner
 
 from assignmentTwo import *
 
@@ -218,4 +219,8 @@ class TestRetirement(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(
+        testRunner=xmlrunner.XMLTestRunner(output="python_tests_xml"),
+        failfast = False, 
+        buffer = False, 
+        catchbreak = False)
