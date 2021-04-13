@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta name = "viewport" content = "width = device - width, initial-scale=1">
+    
+    <title>Retirement Calculator</title> 
+
+    <link rel = "stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">"
+</head>
+
+<h1> Retirement Calculator </h1>
+
+<body> 
+    <div class="main">
+        <form class="pure-form" method="POST" action="/">
+        Age in Years:<br>
+        <input type="text" name="age"><br>
+        Current Salary:<br>
+        <input type="text" name="salary"><br><br>
+        Percent Saved per Year:<br>
+        <input type="text" name="percSaved"><br><br>
+        Goal:<br>
+        <input type="text" name="goal"><br><br>
+        <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+        </form>
+    </div>
+
+    <br>
+
+    <div class="main">
+        % if retirement %
+            <p>
+                {% print("The age you can retire is {}.".format(retirement)) %}
+            </p>
+
+            % endif %
+
+    </div>
+</body>
