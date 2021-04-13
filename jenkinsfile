@@ -1,0 +1,26 @@
+pipeline {
+	agent any
+	
+	stages {
+	
+		stage('Git_Checkout') {
+			steps {
+				echo "Checking out main"
+				git branch: 'main', url: 'https://github.com/CSE4283-BaMi/SWQATestingAssignmentTwo.git'
+			}
+		}
+		
+		stage('Test') {
+			steps {
+				echo "Running Unit Tests"
+				sh 'python3 -m unittest test.py'
+			}
+		}
+		
+		stage('Deploy') {
+			steps {
+				echo "Deploy to Firebase"
+			}
+		}
+	}
+}
