@@ -13,7 +13,7 @@
 
 <body> 
     <div class="main">
-        <form class="pure-form" method="POST" action="/">
+        <form class="pure-form" method="POST" action="/retirement">
         Age in Years:<br>
         <input type="text" name="age"><br>
         Current Salary:<br>
@@ -29,12 +29,12 @@
     <br>
 
     <div class="main">
-        % if retirement %
+        
             <p>
                 {% print("The age you can retire is {}.".format(retirement)) %}
             </p>
 
-            % endif %
+
 
     </div>
 </body>
