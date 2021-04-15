@@ -17,7 +17,7 @@ def calc_retirement(age, salary, percSaved, goal):
     endAge = age + amountYears
     return endAge
 
-@app.route("/")
+@app.route("/", methods = ['GET', 'POST'])
 def index3():
     return render_template("index.html")
 

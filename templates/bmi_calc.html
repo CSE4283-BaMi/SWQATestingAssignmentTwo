@@ -6,14 +6,14 @@
     
     <title>BMI Calculator</title> 
 
-    <link rel = "stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">"
+     <link rel = "stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">"
 </head>
 
 <h1> BMI Calculator </h1>
 
 <body> 
     <div class="main">
-        <form class="pure-form" method="POST" action="/">
+        <form class="pure-form" method="POST" action="/bmi">
         Weight in kgs:<br>
         <input type="text" name="weight"><br>
         Height in cms:<br>
@@ -25,12 +25,10 @@
     <br>
 
     <div class="main">
-        % if bmi %
+       
             <p>
-                {% print("Your BMI is {}.".format(bmi)) %}
+                {% print("Your BMI is {}".format(bmi)) %}
             </p>
-
-            % endif %
 
     </div>
 </body>
