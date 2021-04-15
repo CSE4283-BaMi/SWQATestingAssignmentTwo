@@ -1,7 +1,7 @@
 {
   "hosting": {
 	"site": "cse4283bamicalculators",
-    "public": "public",
+    "public": "templates",
     "ignore": [
       "firebase.json",
       "**/.*",
