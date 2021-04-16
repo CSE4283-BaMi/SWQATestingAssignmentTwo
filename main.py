@@ -35,7 +35,7 @@ def index():
 def index2():
     retirement = ''
 
-    if request.method == 'POST' in request.form:
+    if request.method == 'POST' and 'age' in request.form:
         age = int(request.form.get('age'))
         salary = float(request.form.get('salary'))
         percentSaved = float(request.form.get('percentSaved'))
