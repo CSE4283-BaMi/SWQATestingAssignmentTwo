@@ -68,3 +68,5 @@ node_modules/
 /TEST-test.*.xml
 /.coverage
 /htmlcov
+__pycache__/
+lib/
