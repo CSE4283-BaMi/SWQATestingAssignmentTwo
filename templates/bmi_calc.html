@@ -13,11 +13,13 @@
 
 <body> 
     <div class="main">
-        <form class="pure-form" method="POST" action="/">
-        Weight in kgs:<br>
+        <form class="pure-form" method="POST" action="/bmi">
+        Weight in Pounds:<br>
         <input type="text" name="weight"><br>
-        Height in cms:<br>
-        <input type="text" name="height"><br><br>
+        Height in Feet:<br>
+        <input type="text" name="heightFT"><br>
+        Height in Inches:<br>
+        <input type="text" name="heightIN"><br><br>
         <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
         </form>
     </div>
@@ -25,12 +27,10 @@
     <br>
 
     <div class="main">
-        % if bmi %
+       
             <p>
-                {% print("Your BMI is {}.".format(bmi)) %}
+              {% print("Your BMI is {}".format(bmi)) %}
             </p>
-
-            % endif %
 
     </div>
 </body>
