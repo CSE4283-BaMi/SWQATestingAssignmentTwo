@@ -1,23 +1,21 @@
 from flask import Flask, render_template, request
 import math
+from assignmentTwo import *
 
 app = Flask(__name__)
 
-def calc_bmi(weight, height):
-    return round((weight / ((height / 100) ** 2)), 2)
+def calc_bmi(weight, heightFT, heightIN):
+    data = (weight, heightFT, heightIN)
+    result = bmi(data, True)
+    return result
 
-def calc_retirement(age, salary, percSaved, goal):
-    empMatch = .35
-    #ageCap = 100
+def calc_retirement(age, salary, percentSaved, goal):
+    data = (age, salary, percentSaved, goal)
+    result = retirement(data, True)
+    return result
+    
 
-    salaryPercent = salary * percSaved
-    empPercent = salaryPercent * empMatch
-    saveInstallment = salaryPercent * empPercent
-    amountYears = math.ceil(goal / saveInstallment)
-    endAge = age + amountYears
-    return endAge
-
-@app.route("/")
+@app.route("/", methods = ['GET', 'POST'])
 def index3():
     return render_template("index.html")
 
@@ -27,8 +25,9 @@ def index():
 
     if request.method == 'POST' and 'weight' in request.form:
         weight = float(request.form.get('weight'))
-        height = float(request.form.get('height'))
-        bmi = calc_bmi(weight, height)
+        heightFT = float(request.form.get('heightFT'))
+        heightIN = float(request.form.get('heightIN'))
+        bmi = calc_bmi(weight, heightFT, heightIN)
 
     return render_template("bmi_calc.html", bmi = bmi)
 
@@ -39,9 +38,9 @@ def index2():
     if request.method == 'POST' in request.form:
         age = int(request.form.get('age'))
         salary = float(request.form.get('salary'))
-        percSaved = float(request.form.get('percSaved'))
+        percentSaved = float(request.form.get('percentSaved'))
         goal = float(request.form.get('goal'))
-        retirement = calc_retirement(age, salary, percSaved, goal)
+        retirement = calc_retirement(age, salary, percentSaved, goal)
 
     return render_template("retirement_calc.html", retirement = retirement)
 
